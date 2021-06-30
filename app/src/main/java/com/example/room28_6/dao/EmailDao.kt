@@ -1,7 +1,15 @@
 package com.example.room28_6.dao
 
 import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
+import com.example.room28_6.entity.Email
 
 @Dao
-class EmailDao {
+interface EmailDao {
+    @Insert
+    fun insertData(data: List<Email>)
+
+    @Query("select * from Data")
+    fun getData(): List<Email>
 }
